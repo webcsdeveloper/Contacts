@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Contacts.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace Contacts.Data
@@ -9,5 +10,7 @@ namespace Contacts.Data
             : base(options)
         {
         }
+
+        public DbSet<AppUser> User { get; set; }
     }
 }
