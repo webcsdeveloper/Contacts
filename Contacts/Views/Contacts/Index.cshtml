@@ -1,0 +1,83 @@
+﻿@model IEnumerable<Contacts.Models.DB.Contact>
+
+@{
+    ViewData["Title"] = "لیست تماس ها";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    <a asp-action="Create">ایجاد تماس جدید</a>
+</p>
+<form method="get">
+    <div class="form-group">
+        <div class="input-group">
+            <input asp type="search" class="form-control" value="@ViewData["searchString"]" name="SearchString"/>
+            <button class="btn btn-primary">
+                جستجو
+                @*<i class="fa-solid fa-magnifying-glass"></i>*@
+            </button>
+        </div>
+    </div>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Firstname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lastname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InternalPhone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Post)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PersonnelId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WorkPlace)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Firstname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lastname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InternalPhone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Post)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PersonnelId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WorkPlace)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ContactId">ویرایش</a> |
+                <a asp-action="Details" asp-route-id="@item.ContactId">جزئیات</a> |
+                <a asp-action="Delete" asp-route-id="@item.ContactId">حذف</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

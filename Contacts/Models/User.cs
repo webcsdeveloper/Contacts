@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using System.ComponentModel.DataAnnotations;
 
 namespace Contacts.Models
 {
@@ -6,5 +7,6 @@ namespace Contacts.Models
     {
         // show wether administrator confirm user account or not
         public bool Confirmed { get; set; }
+        
     }
 }
