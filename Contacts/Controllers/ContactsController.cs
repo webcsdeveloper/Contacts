@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Contacts.Models.DB;
 using Contacts.Data.DataAccess;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Contacts.Controllers
 {
+    [Authorize]
     public class ContactsController : Controller
     {
         private readonly IContactsData _mydata;
@@ -19,6 +21,7 @@ namespace Contacts.Controllers
             _mydata = mydata;
         }
 
+        [AllowAnonymous]
         // GET: Contacts
         public async Task<IActionResult> Index(string searchString)
         {
@@ -27,6 +30,7 @@ namespace Contacts.Controllers
             return View(contacts);
         }
 
+        [AllowAnonymous]
         // GET: Contacts/Details/5
         public async Task<IActionResult> Details(int id)
         {
@@ -50,11 +54,11 @@ namespace Contacts.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Firstname,Lastname,Phone,InternalPhone,Post,PersonnelId,WorkPlace")] Contact contact)
+        public IActionResult Create([Bind("Firstname,Lastname,Phone,InternalPhone,Post,PersonnelId,WorkPlace")] Contact contact)
         {
             if (ModelState.IsValid)
             {
-                _mydata.CreateContact(contact);
+                var ms = _mydata.CreateContact(contact);
                 return RedirectToAction(nameof(Index));
             }
             return View(contact);

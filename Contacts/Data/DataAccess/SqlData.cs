@@ -19,7 +19,7 @@ namespace Contacts.Data.DataAccess
         public Contact CreateContact(Contact contact)
         {
             _context.Contacts.Add(contact);
-            _context.SaveChangesAsync();
+            _context.SaveChanges();
             return contact;
         }
 

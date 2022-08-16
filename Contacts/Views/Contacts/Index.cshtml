@@ -1,14 +1,18 @@
 ﻿@model IEnumerable<Contacts.Models.DB.Contact>
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
 
 @{
     ViewData["Title"] = "لیست تماس ها";
 }
 
 <h1>@ViewData["Title"]</h1>
-
+@if(SignInManager.IsSignedIn(User))
+{
 <p>
     <a asp-action="Create">ایجاد تماس جدید</a>
 </p>
+}
 <form method="get">
     <div class="form-group">
         <div class="input-group">
@@ -45,7 +49,8 @@
             <th>
                 @Html.DisplayNameFor(model => model.WorkPlace)
             </th>
-            <th></th>
+            <th>عملیات</th>
+
         </tr>
     </thead>
     <tbody>
@@ -73,10 +78,16 @@
                 @Html.DisplayFor(modelItem => item.WorkPlace)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.ContactId">ویرایش</a> |
-                <a asp-action="Details" asp-route-id="@item.ContactId">جزئیات</a> |
-                <a asp-action="Delete" asp-route-id="@item.ContactId">حذف</a>
+@if (SignInManager.IsSignedIn(User))
+{
+                
+                <a asp-action="Edit" asp-route-id="@item.ContactId">ویرایش</a> @:|
+                <a asp-action="Delete" asp-route-id="@item.ContactId">حذف</a> @:|
+                
+}
+                <a asp-action="Details" asp-route-id="@item.ContactId">جزئیات</a>
             </td>
+
         </tr>
 }
     </tbody>
