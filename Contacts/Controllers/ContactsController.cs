@@ -54,7 +54,7 @@ namespace Contacts.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create([Bind("Firstname,Lastname,Phone,InternalPhone,Post,PersonnelId,WorkPlace")] Contact contact)
+        public IActionResult Create([Bind("Firstname,Lastname,Phone,InternalPhone,Fax,Post,PersonnelId,WorkPlace")] Contact contact)
         {
             if (ModelState.IsValid)
             {
@@ -81,7 +81,7 @@ namespace Contacts.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(int id, [Bind("ContactId, Firstname,Lastname,Phone,InternalPhone,Post,PersonnelId,WorkPlace")] Contact contact)
+        public IActionResult Edit(int id, [Bind("ContactId, Firstname,Lastname,Phone,InternalPhone,Fax,Post,PersonnelId,WorkPlace")] Contact contact)
         {
 
             if (ModelState.IsValid)

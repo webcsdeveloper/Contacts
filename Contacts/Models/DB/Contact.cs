@@ -16,12 +16,15 @@ namespace Contacts.Models.DB
         public string Phone { get; set; }
         [Display(Name = "داخلی")]
         public string InternalPhone { get; set; }
+        [Display(Name = "شماره فکس")]
+        public string Fax { get; set; }
         [Display(Name = "سمت")]
         public string Post { get; set; }
         [Display(Name = "شماره پرسنلی")]
         public string PersonnelId { get; set; }
         [Display(Name = "محل کار")]
         public string WorkPlace { get; set; }
+        
         //public ICollection<WorkInfo> WorkInfos { get; set; }
         //public ICollection<HomeInfo> HomeInfos { get; set; }
 
