@@ -1,3 +1,18 @@
+@font-face{
+    font-family: 'IranSans';
+    src: url("fonts/IranianSans.ttf");
+}
+
+@font-face{
+    font-family:Yekan;
+    src: url('fonts/Yekan.ttf');  
+}
+
+@font-face {
+    font-family: Lalezar;
+    src: url('fonts/Lalezar-Regular.ttf');
+}
+
 html {
   font-size: 14px;
 }
@@ -14,9 +29,17 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    font-family: 'Yekan';
+    margin-bottom: 60px;
+    font-size: 20px;
 }
 
 th, td{
     text-align: center;
+}
+
+h1,
+h2,
+h3{
+    font-family: Lalezar;
 }

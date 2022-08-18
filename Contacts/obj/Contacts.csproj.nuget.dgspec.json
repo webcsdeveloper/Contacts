@@ -1,23 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\workspace\\Contacts\\contacts\\Contacts.csproj": {}
+    "E:\\1-dotnetDeveloper\\workspace\\repos\\Contacts\\Contacts\\Contacts.csproj": {}
   },
   "projects": {
-    "D:\\workspace\\Contacts\\contacts\\Contacts.csproj": {
+    "E:\\1-dotnetDeveloper\\workspace\\repos\\Contacts\\Contacts\\Contacts.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\workspace\\Contacts\\contacts\\Contacts.csproj",
+        "projectUniqueName": "E:\\1-dotnetDeveloper\\workspace\\repos\\Contacts\\Contacts\\Contacts.csproj",
         "projectName": "Contacts",
-        "projectPath": "D:\\workspace\\Contacts\\contacts\\Contacts.csproj",
-        "packagesPath": "C:\\Users\\A.R.I\\.nuget\\packages\\",
-        "outputPath": "D:\\workspace\\Contacts\\contacts\\obj\\",
+        "projectPath": "E:\\1-dotnetDeveloper\\workspace\\repos\\Contacts\\Contacts\\Contacts.csproj",
+        "packagesPath": "C:\\Users\\webcsdeveloper\\.nuget\\packages\\",
+        "outputPath": "E:\\1-dotnetDeveloper\\workspace\\repos\\Contacts\\Contacts\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\A.R.I\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\webcsdeveloper\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

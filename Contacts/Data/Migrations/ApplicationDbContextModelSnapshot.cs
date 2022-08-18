@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace Contacts.Data.Migrations
+namespace Contacts.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
     partial class ApplicationDbContextModelSnapshot : ModelSnapshot
@@ -31,7 +31,6 @@ namespace Contacts.Data.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ContactId"), 1L, 1);
 
                     b.Property<string>("Fax")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Firstname")
@@ -39,7 +38,6 @@ namespace Contacts.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("InternalPhone")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Lastname")
@@ -47,7 +45,6 @@ namespace Contacts.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PersonnelId")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Phone")
@@ -55,11 +52,9 @@ namespace Contacts.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Post")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("WorkPlace")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ContactId");
